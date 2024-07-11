@@ -1,0 +1,80 @@
+.programs-page {
+  padding: 20px;
+  background: #f0f0f0;
+}
+
+.program-section .accordion {
+  background-color: #3949ab;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.program-section .accordion:hover {
+  background-color: #4b8bda;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.panel.open {
+  padding: 20px 18px;
+  max-height: 500px; 
+}
+
+.panel p, .panel ul {
+  margin: 10px 0;
+}
+
+.panel ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.panel ul li {
+  padding: 5px 0;
+}
+
+.arrow {
+  font-size: 20px;
+}
+
+.youtube-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #3949ab;
+  color: white;
+}
+
+.youtube-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  cursor: pointer; 
+}
+
+.youtube-thumbnail {
+  width: 100%;
+  height: 450px;
+  max-width: 1000px; 
+  border: none;
+  transition: transform 0.3s ease; 
+}
+
+.youtube-thumbnail:hover {
+  transform: scale(1.05); 
+}

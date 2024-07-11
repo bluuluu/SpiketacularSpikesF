@@ -1,0 +1,57 @@
+.blog-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-form, .comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.post-form input, .comment-form input, .post-form textarea, .comment-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.post-form button, .comment-form button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: darkblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.post-form button:hover, .comment-form button:hover {
+  background-color: #0056b3;
+}
+
+.posts {
+  margin-top: 20px;
+}
+
+.post {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.post h2 {
+  margin: 0;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+.comment {
+  margin-bottom: 10px;
+}

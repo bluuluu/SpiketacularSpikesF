@@ -1,0 +1,102 @@
+.about-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.courts-section {
+  margin-bottom: 20px;
+  background-color: #3949ab;
+  padding: 20px;
+  color: white; 
+}
+
+.maps-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.courts-images {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.court {
+  margin: 10px;
+  text-align: center;
+  width: 300px; 
+}
+
+.court-photo {
+  width: 200px;
+  height: 200px; 
+  object-fit: cover;
+  display: block; 
+  margin: 0 auto 10px auto; 
+}
+
+.court-name {
+  font-weight: bold;
+}
+
+.book-button {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 350px;
+  background-color: darkblue;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.growth-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #3949ab;
+  color: white;
+  border-radius: 5px;
+}
+
+.filter-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-form input {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+.growth-data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.growth-item {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+}
+
+.statistics {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2em;
+}

@@ -1,0 +1,68 @@
+.confirmation-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.confirmation-header {
+  background-color: #3949ab;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.confirmation-content {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.checkmark-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkmark-image {
+  width: 200px;
+  height: 200px;
+}
+
+.confirmation-details {
+  flex: 2;
+  text-align: left;
+}
+
+.confirmation-details h3, .confirmation-details p {
+  margin: 10px 0;
+}
+
+.return-button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #3949ab;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.return-button:hover {
+  background-color: #397a92;
+}
+
+.footer {
+  background-color: #3949ab;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer h3, .footer p {
+  margin: 5px 0;
+}

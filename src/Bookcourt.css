@@ -1,0 +1,74 @@
+.bookcourt-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .court-photo {
+    margin: 20px auto;
+    width: 60%;
+    max-width: 400px;
+    height: 300px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .court-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .court-selection {
+    margin: 20px 0;
+  }
+  
+  .date-time-selection {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+  }
+  
+  .date-time-selection div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .status-total {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+  }
+  
+  .status-total .status, .status-total .total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .checkout-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .checkout-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
