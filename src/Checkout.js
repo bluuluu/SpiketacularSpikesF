@@ -22,7 +22,14 @@ function Checkout({ language = 'en' }) {  // Set default value for language
       cancelOrder: "Cancel Order",
       confirmOrder: "Confirm Order",
       errorMessage: "Please fill out all fields correctly.",
-      clearAll: "Clear All"
+      clearAll: "Clear All",
+      firstNameError: "Please enter your first name.",
+      lastNameError: "Please enter your last name.",
+      emailError: "Please enter a valid email address.",
+      phoneNumberError: "Please enter a valid 10-digit phone number.",
+      cardNumberError: "Please enter a valid 16-digit card number.",
+      expiryDateError: "Please enter a valid expiry date in MM/YY format.",
+      cvsError: "Please enter a valid 3-digit CVS."
     },
     fr: {
       checkout: "Passer à la caisse",
@@ -42,7 +49,14 @@ function Checkout({ language = 'en' }) {  // Set default value for language
       cancelOrder: "Annuler la commande",
       confirmOrder: "Confirmer la commande",
       errorMessage: "Veuillez remplir tous les champs correctement.",
-      clearAll: "Tout effacer"
+      clearAll: "Tout effacer",
+      firstNameError: "Veuillez entrer votre prénom.",
+      lastNameError: "Veuillez entrer votre nom de famille.",
+      emailError: "Veuillez entrer une adresse e-mail valide.",
+      phoneNumberError: "Veuillez entrer un numéro de téléphone valide à 10 chiffres.",
+      cardNumberError: "Veuillez entrer un numéro de carte valide à 16 chiffres.",
+      expiryDateError: "Veuillez entrer une date d'expiration valide au format MM/AA.",
+      cvsError: "Veuillez entrer un CVS valide à 3 chiffres."
     }
   };
 
@@ -55,6 +69,7 @@ function Checkout({ language = 'en' }) {  // Set default value for language
   const [cardNumber, setCardNumber] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
   const [cvs, setCvs] = useState('');
+  const [errors, setErrors] = useState({});
 
   const navigate = useNavigate();
 
@@ -89,18 +104,20 @@ function Checkout({ language = 'en' }) {  // Set default value for language
 
   const handleConfirmOrder = (e) => {
     e.preventDefault();
-    if (
-      firstName &&
-      lastName &&
-      validateEmail(email) &&
-      validatePhoneNumber(phoneNumber) &&
-      validateCardNumber(cardNumber) &&
-      validateExpiryDate(expiryDate) &&
-      validateCvs(cvs)
-    ) {
+
+    const newErrors = {};
+    if (!firstName) newErrors.firstName = t.firstNameError;
+    if (!lastName) newErrors.lastName = t.lastNameError;
+    if (!validateEmail(email)) newErrors.email = t.emailError;
+    if (!validatePhoneNumber(phoneNumber)) newErrors.phoneNumber = t.phoneNumberError;
+    if (!validateCardNumber(cardNumber)) newErrors.cardNumber = t.cardNumberError;
+    if (!validateExpiryDate(expiryDate)) newErrors.expiryDate = t.expiryDateError;
+    if (!validateCvs(cvs)) newErrors.cvs = t.cvsError;
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
       navigate('/confirmation');
-    } else {
-      alert(t.errorMessage);
     }
   };
 
@@ -112,6 +129,7 @@ function Checkout({ language = 'en' }) {  // Set default value for language
     setCardNumber('');
     setExpiryDate('');
     setCvs('');
+    setErrors({});
   };
 
   const isFormValid = 
@@ -144,19 +162,23 @@ function Checkout({ language = 'en' }) {  // Set default value for language
           <h3>{t.personalInfo}</h3>
           <div className="input-group">
             <label>{t.firstName}</label>
-            <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+            <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} required placeholder="John" />
+            {errors.firstName && <p className="error-message">{errors.firstName}</p>}
           </div>
           <div className="input-group">
             <label>{t.lastName}</label>
-            <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+            <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} required placeholder="Doe" />
+            {errors.lastName && <p className="error-message">{errors.lastName}</p>}
           </div>
           <div className="input-group">
             <label>{t.email}</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="john.doe@example.com" />
+            {errors.email && <p className="error-message">{errors.email}</p>}
           </div>
           <div className="input-group">
             <label>{t.phoneNumber}</label>
-            <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} maxLength="10" required />
+            <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} maxLength="10" required placeholder="1234567890" />
+            {errors.phoneNumber && <p className="error-message">{errors.phoneNumber}</p>}
           </div>
         </div>
         <div className="payment-info">
@@ -169,7 +191,9 @@ function Checkout({ language = 'en' }) {  // Set default value for language
               onChange={(e) => setCardNumber(e.target.value)}
               maxLength="16"
               required
+              placeholder="1234567812345678"
             />
+            {errors.cardNumber && <p className="error-message">{errors.cardNumber}</p>}
           </div>
           <div className="input-group">
             <label>{t.expiryDate}</label>
@@ -181,6 +205,7 @@ function Checkout({ language = 'en' }) {  // Set default value for language
               placeholder="MM/YY"
               required
             />
+            {errors.expiryDate && <p class="error-message">{errors.expiryDate}</p>}
           </div>
           <div className="input-group">
             <label>{t.cvs}</label>
@@ -190,7 +215,9 @@ function Checkout({ language = 'en' }) {  // Set default value for language
               onChange={(e) => setCvs(e.target.value)}
               maxLength="3"
               required
+              placeholder="123"
             />
+            {errors.cvs && <p className="error-message">{errors.cvs}</p>}
           </div>
         </div>
         <div className="checkout-buttons">

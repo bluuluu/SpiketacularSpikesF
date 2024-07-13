@@ -45,6 +45,12 @@
   width: 100%;
 }
 
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 .checkout-buttons {
   display: flex;
   justify-content: space-between;
@@ -66,7 +72,7 @@
 }
 
 .checkout-buttons button[type="submit"] {
-  background-color:darkblue;
+  background-color: darkblue;
   color: white;
 }
 
