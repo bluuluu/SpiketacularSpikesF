@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SpiketacularSpikesF/static/css/main.b1a7a8e7.css",
-    "main.js": "/SpiketacularSpikesF/static/js/main.8436123d.js",
+    "main.css": "/SpiketacularSpikesF/static/css/main.24413598.css",
+    "main.js": "/SpiketacularSpikesF/static/js/main.b8355407.js",
     "static/js/453.1ff16465.chunk.js": "/SpiketacularSpikesF/static/js/453.1ff16465.chunk.js",
     "static/media/pngtree-volleyball-player-spiking-ball-crest-illustration-spiker-spike-vector-picture-image_9421056.png": "/SpiketacularSpikesF/static/media/pngtree-volleyball-player-spiking-ball-crest-illustration-spiker-spike-vector-picture-image_9421056.aa6c3a0ca096c76e1711.png",
     "static/media/Web__FillWzI0MDAsMTA2Nl0.jpg": "/SpiketacularSpikesF/static/media/Web__FillWzI0MDAsMTA2Nl0.73546215f2b13e96789a.jpg",
@@ -15,12 +15,12 @@
     "static/media/-IMG-2097.webp": "/SpiketacularSpikesF/static/media/636277790365561229-IMG-2097.73611c278ebf0370f846.webp",
     "static/media/1331736876.avif": "/SpiketacularSpikesF/static/media/1331736876.5d8815a3c9ee43ad18e1.avif",
     "index.html": "/SpiketacularSpikesF/index.html",
-    "main.b1a7a8e7.css.map": "/SpiketacularSpikesF/static/css/main.b1a7a8e7.css.map",
-    "main.8436123d.js.map": "/SpiketacularSpikesF/static/js/main.8436123d.js.map",
+    "main.24413598.css.map": "/SpiketacularSpikesF/static/css/main.24413598.css.map",
+    "main.b8355407.js.map": "/SpiketacularSpikesF/static/js/main.b8355407.js.map",
     "453.1ff16465.chunk.js.map": "/SpiketacularSpikesF/static/js/453.1ff16465.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1a7a8e7.css",
-    "static/js/main.8436123d.js"
+    "static/css/main.24413598.css",
+    "static/js/main.b8355407.js"
   ]
 }
