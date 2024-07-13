@@ -106,10 +106,12 @@ h2 {
 button {
   padding: 10px 20px;
   font-size: 1em;
-  font-weight: bold;
+  background-color: darkblue;
+  color: white;
   cursor: pointer;
   width: 350px;
   margin: 5px 0; 
+  border: none;
 }
 
 .info-button {

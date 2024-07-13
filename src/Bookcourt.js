@@ -7,12 +7,12 @@ import spikeBeach from './Beach-Volleyball-2-scaled.jpg';
 import spikeCourt from './com-volleyball-gallery-3.webp';
 
 const courts = [
-  { name: 'Spike Stadium', price: 200, unavailableDays: [1, 2, 3], image: spikeStadium }, 
-  { name: 'Spike Beach', price: 300, unavailableDays: [5, 6], image: spikeBeach }, 
-  { name: 'Spike Court', price: 150, unavailableDays: [0], image: spikeCourt } 
+  { name: 'Spike Stadium', price: 200, unavailableDays: [1, 2, 3], image: spikeStadium, description: { en: 'A large stadium with seating for spectators.', fr: 'Un grand stade avec des sièges pour les spectateurs.' } }, 
+  { name: 'Spike Beach', price: 300, unavailableDays: [5, 6], image: spikeBeach, description: { en: 'A beach volleyball court with a sand surface.', fr: 'Un terrain de beach-volley avec une surface de sable.' } }, 
+  { name: 'Spike Court', price: 150, unavailableDays: [0], image: spikeCourt, description: { en: 'A standard indoor volleyball court.', fr: 'Un terrain de volley-ball intérieur standard.' } } 
 ];
 
-function Bookcourt() {
+function Bookcourt({ language = 'en' }) {
   const [selectedCourt, setSelectedCourt] = useState(courts[0]);
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
@@ -42,7 +42,7 @@ function Bookcourt() {
 
   return (
     <div className="bookcourt-page">
-      <h2>Court Booking</h2>
+      <h2>{language === 'en' ? 'Court Booking' : 'Réservation de terrain'}</h2>
       <div className="court-photo">
         <img 
           src={selectedCourt.image} 
@@ -53,17 +53,18 @@ function Bookcourt() {
       <div className="form-container">
         <div className="court-selection">
           <label>
-            Court selection:
+            {language === 'en' ? 'Court selection:' : 'Sélection du terrain:'}
             <select value={selectedCourt.name} onChange={handleCourtChange}>
               {courts.map(court => (
                 <option key={court.name} value={court.name}>{court.name}</option>
               ))}
             </select>
           </label>
+          <p className="court-description">{selectedCourt.description[language]}</p>
         </div>
         <div className="date-time-selection">
           <div>
-            <label>Date:</label>
+            <label>{language === 'en' ? 'Date:' : 'Date:'}</label>
             <input 
               type="date" 
               value={date} 
@@ -71,7 +72,7 @@ function Bookcourt() {
             />
           </div>
           <div>
-            <label>Time:</label>
+            <label>{language === 'en' ? 'Time:' : 'Heure:'}</label>
             <input 
               type="time" 
               value={time} 
@@ -81,11 +82,11 @@ function Bookcourt() {
         </div>
         <div className="status-total">
           <div className="status" style={{ color: status === 'Available' ? 'green' : 'red' }}>
-            <label>Status:</label>
+            <label>{language === 'en' ? 'Status:' : 'Statut:'}</label>
             <span>{status}</span>
           </div>
           <div className="total">
-            <label>Total:</label>
+            <label>{language === 'en' ? 'Total:' : 'Total:'}</label>
             <span>${selectedCourt.price}</span>
           </div>
         </div>
@@ -94,7 +95,7 @@ function Bookcourt() {
           disabled={isCheckoutDisabled}
           onClick={() => navigate('/checkout')}
         >
-          Checkout
+          {language === 'en' ? 'Checkout' : 'Passer à la caisse'}
         </button>
       </div>
     </div>
